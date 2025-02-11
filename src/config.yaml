@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Drive & Thrive
+  site: 'https://datgolf.com'
   base: '/'
   trailingSlash: false
 
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Drive & Thrive
+    template: '%s — Drive & Thrive'
+  description: 'The Drive & Thrive Ultimate Golf Tournament is a premier networking event designed for entrepreneurs, golf professionals, influencers, celebrities, and corporate sponsors.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Drive & Thrive
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/datlogo.jpg'
+        width: 1500
+        height: 1500
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@datgolf'
+    site: '@datgolf'
     cardType: summary_large_image
 
 i18n:
