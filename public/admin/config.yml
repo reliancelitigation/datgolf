@@ -19,28 +19,31 @@ collections:
   # Collection for site-wide settings
   - label: 'Site Settings'
     name: 'site_settings'
-    file: 'src/content/settings.yml'
-    fields:
-      - { label: 'Site Name', name: 'site_name', widget: 'string' }
-      - label: 'Site Logo'
-        name: 'site_logo'
-        widget: 'image'
-        media_library:
-          config:
-            multiple: false
-      - {
-          label: 'Default SEO Description',
-          name: 'default_seo_description',
-          widget: 'string',
-          hint: 'Description for SEO when not specified on pages',
-        }
-      - {
-          label: 'Default Social Share Image',
-          name: 'default_share_image',
-          widget: 'image',
-          media_library: { config: { multiple: false } },
-          hint: 'Default image for social media sharing',
-        }
+    files:
+      - label: 'General Settings'
+        name: 'settings'
+        file: 'src/content/settings.yml'
+        fields:
+          - { label: 'Site Name', name: 'site_name', widget: 'string' }
+          - label: 'Site Logo'
+            name: 'site_logo'
+            widget: 'image'
+            media_library:
+              config:
+                multiple: false
+          - {
+              label: 'Default SEO Description',
+              name: 'default_seo_description',
+              widget: 'string',
+              hint: 'Description for SEO when not specified on pages',
+            }
+          - {
+              label: 'Default Social Share Image',
+              name: 'default_share_image',
+              widget: 'image',
+              media_library: { config: { multiple: false } },
+              hint: 'Default image for social media sharing',
+            }
 
   # Collection for individual page content
   - label: 'Pages'
