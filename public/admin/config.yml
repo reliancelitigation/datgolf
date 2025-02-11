@@ -8,7 +8,7 @@ media_folder: 'src/assets/images'
 public_folder: '/_astro'
 
 # turn on editing
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 # Definition of collections for content management
 collections:
