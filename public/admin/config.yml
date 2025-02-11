@@ -1,205 +1,210 @@
 # Backend configuration for the CMS
 backend:
-  name: git-gateway
-  branch: main
+    name: git-gateway
+    branch: main
 
-# Configuration for media files
-media_folder: 'src/assets/images'
-public_folder: '/_astro'
+  # Configuration for media files
+  media_folder: 'src/assets/images'
+  public_folder: '/_astro'
 
-# Definition of collections for content management
-collections:
-  # Collection for site-wide settings
-  - label: "Site Settings"
-    name: "site_settings"
-    files:
-      - label: "General Settings"
-        name: "settings"
-        file: "src/content/settings.yml"
-        fields:
-          - { label: 'Site Name', name: 'site_name', widget: 'string' }
-          - label: "Site Logo"
-            name: "site_logo"
-            widget: "image"
-            media_library:
-              config:
-                multiple: false
-          - { label: 'Default SEO Description', name: 'default_seo_description', widget: 'string', hint: 'Description for SEO when not specified on pages' }
-          - { label: 'Default Social Share Image', name: 'default_share_image', widget: 'image', media_library: { config: { multiple: false } }, hint: 'Default image for social media sharing' }
+  # Definition of collections for content management
+  collections:
+    # Collection for site-wide settings
+    - label: "Site Settings"
+      name: "site_settings"
+      files:
+        - label: "General Settings"
+          name: "settings"
+          file: "src/content/settings.yml"
+          fields:
+            - { label: 'Site Name', name: 'site_name', widget: 'string' }
+            - label: "Site Logo"
+              name: "site_logo"
+              widget: "image"
+              media_library:
+                config:
+                  multiple: false
+            - { label: 'Default SEO Description', name: 'default_seo_description', widget: 'string', hint: 'Description for SEO when not specified on pages' }
+            - { label: 'Default Social Share Image', name: 'default_share_image', widget: 'image', media_library: { config: { multiple: false } }, hint: 'Default image for social media sharing' }
 
-  # Collection for individual page content
-  - label: "Pages"
-    name: "pages"
-    files:
-      - label: "About Page"
-        name: "about"
-        file: "src/content/pages/about.yml"
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Intro', name: 'intro', widget: 'markdown' }
-          - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
-          - label: "SEO & Social Sharing Image"
-            name: "share_image"
-            widget: "image"
-            media_library:
-              config:
-                multiple: false
-            hint: 'Image for SEO and social sharing, will use default if not specified'
-      - label: "Home Page"
-        name: "home"
-        file: "src/content/pages/home.yml"
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Intro', name: 'intro', widget: 'markdown' }
-          - label: "Hero Image"
-            name: "hero_image"
-            widget: "image"
-            media_library:
-              config:
-                multiple: false
-          - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
-          - label: "SEO & Social Sharing Image"
-            name: "share_image"
-            widget: "image"
-            media_library:
-              config:
-                multiple: false
-            hint: 'Image for SEO and social sharing, will use default if not specified'
-      # ... (similar for other pages like packages_page, sponsors_page, etc.)
-      - label: "Packages Page"
-        name: "packages_page"
-        file: "src/content/pages/packages_page.yml"
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Intro', name: 'intro', widget: 'markdown' }
-          - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
-          - label: "SEO & Social Sharing Image"
-            name: "share_image"
-            widget: "image"
-            media_library:
-              config:
-                multiple: false
-            hint: 'Image for SEO and social sharing, will use default if not specified'
-      # Add similar fields for other pages here
+    # Collection for individual page content
+    - label: "Pages"
+      name: "pages"
+      files:
+        - label: "About Page"
+          name: "about"
+          file: "src/content/pages/about.yml"
+          fields:
+            - { label: 'Title', name: 'title', widget: 'string' }
+            - { label: 'Intro', name: 'intro', widget: 'markdown' }
+            - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: "Home Page"
+          name: "home"
+          file: "src/content/pages/home.yml"
+          fields:
+            - { label: 'Title', name: 'title', widget: 'string' }
+            - { label: 'Intro', name: 'intro', widget: 'markdown' }
+            - label: "Hero Image"
+              name: "hero_image"
+              widget: "image"
+              media_library:
+                config:
+                  multiple: false
+            - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: "Packages Page"
+          name: "packages_page"
+          file: "src/content/pages/packages_page.yml"
+          fields:
+            - { label: 'Title', name: 'title', widget: 'string' }
+            - { label: 'Intro', name: 'intro', widget: 'markdown' }
+            - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: "Sponsors Page"
+          name: "sponsors_page"
+          file: "src/content/pages/sponsors_page.yml"
+          fields:
+            - { label: 'Title', name: 'title', widget: 'string' }
+            - { label: 'Intro', name: 'intro', widget: 'markdown' }
+            - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: "Gallery Page"
+          name: "gallery_page"
+          file: "src/content/pages/gallery_page.yml"
+          fields:
+            - { label: 'Title', name: 'title', widget: 'string' }
+            - { label: 'Intro', name: 'intro', widget: 'markdown' }
+            - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: "Events Page"
+          name: "events_page"
+          file: "src/content/pages/events_page.yml"
+          fields:
+            - { label: 'Title', name: 'title', widget: 'string' }
+            - { label: 'Intro', name: 'intro', widget: 'markdown' }
+            - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: "Teams Page"
+          name: "teams_page"
+          file: "src/content/pages/teams_page.yml"
+          fields:
+            - { label: 'Title', name: 'title', widget: 'string' }
+            - { label: 'Intro', name: 'intro', widget: 'markdown' }
+            - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
 
-  # Collection for package information
-  - label: 'Packages'
-    name: 'packages'
-    folder: 'src/content/packages'
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Price', name: 'price', widget: 'string' }
-      - { label: 'Available', name: 'available', widget: 'boolean' }
-      - { label: 'Included Items', name: 'included', widget: 'list' }
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
-      - label: "Package Image"
-        name: "package_image"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-        hint: 'Image for SEO and social sharing'
+    # Collection for package information
+    - label: 'Packages'
+      name: 'packages'
+      folder: 'src/content/packages'
+      create: true
+      slug: "{{slug}}"
+      fields:
+        - { label: 'Name', name: 'name', widget: 'string' }
+        - { label: 'Price', name: 'price', widget: 'string' }
+        - { label: 'Available', name: 'available', widget: 'boolean' }
+        - { label: 'Included Items', name: 'included', widget: 'list' }
+        - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: "Package Image"
+          name: "package_image"
+          widget: "image"
+          media_library:
+            config:
+              multiple: false
+          hint: 'Image for SEO and social sharing'
 
-  # Collection for sponsor details
-  - label: 'Sponsors'
-    name: 'sponsors'
-    folder: 'src/content/sponsors'
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - label: "Sponsor Logo"
-        name: "sponsor_logo"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+    # Collection for sponsor details
+    - label: 'Sponsors'
+      name: 'sponsors'
+      folder: 'src/content/sponsors'
+      create: true
+      slug: "{{slug}}"
+      fields:
+        - label: "Sponsor Logo"
+          name: "sponsor_logo"
+          widget: "image"
+          media_library:
+            config:
+              multiple: false
+        - { label: 'Name', name: 'name', widget: 'string' }
+        - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
 
-  # Collection for gallery images
-  - label: 'Gallery Images'
-    name: 'gallery_images'
-    folder: 'src/content/gallery_images'
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - label: "Gallery Image"
-        name: "gallery_image"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
-      - label: 'Tags'
-        name: 'tags'
-        widget: 'list'
-        allow_add: true
-        allow_delete: true
-        collapsed: false
-        field: { label: 'Tag', name: 'tag', widget: 'string' }
+    # Collection for gallery images
+    - label: 'Gallery Images'
+      name: 'gallery_images'
+      folder: 'src/content/gallery_images'
+      create: true
+      slug: "{{slug}}"
+      fields:
+        - label: "Gallery Image"
+          name: "gallery_image"
+          widget: "image"
+          media_library:
+            config:
+              multiple: false
+        - { label: 'Description', name: 'description', widget: 'string' }
+        - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+        - label: 'Tags'
+          name: 'tags'
+          widget: 'list'
+          allow_add: true
+          allow_delete: true
+          collapsed: false
+          field: { label: 'Tag', name: 'tag', widget: 'string' }
 
-  # Collection for events
-  - name: 'events'
-    label: 'Events'
-    folder: 'src/content/events'
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - label: "Event Image"
-        name: "event_image"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Location', name: 'location', widget: 'string' }
-      - label: "Start Date/Time"
-        name: "start"
-        widget: "datetime"
-        default: "{{now}}"
-        date_format: "DD.MM.YYYY"  # e.g., 24.12.2021
-        time_format: "HH:mm"  # e.g., 21:07
-        format: "LLL"
-        picker_utc: false
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+    # Collection for events
+    - name: 'events'
+      label: 'Events'
+      folder: 'src/content/events'
+      create: true
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      fields:
+        - label: "Event Image"
+          name: "event_image"
+          widget: "image"
+          media_library:
+            config:
+              multiple: false
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Description', name: 'description', widget: 'string' }
+        - { label: 'Location', name: 'location', widget: 'string' }
+        - label: "Start Date/Time"
+          name: "start"
+          widget: "datetime"
+          default: "{{now}}"
+          date_format: "DD.MM.YYYY"  # e.g., 24.12.2021
+          time_format: "HH:mm"  # e.g., 21:07
+          format: "LLL"
+          picker_utc: false
+        - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
 
-  # Collection for teams
-  - name: 'teams'
-    label: 'Teams'
-    folder: 'src/content/teams'
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - label: "Team Image"
-        name: "team_image"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - label: "Team Logo"
-        name: "team_logo"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - label: 'Players'
-        name: 'players'
-        widget: 'list'
-        allow_add: true
-        allow_delete: true
-        collapsed: false
-        fields:
-          - { label: 'Name', name: 'name', widget: 'string' }
-      - label: 'Tags'
-        name: 'tags'
-        widget: 'list'
-        allow_add: true
-        allow_delete: true
-        collapsed: false
-        field: { label: 'Tag', name: 'tag', widget: 'string' }
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+    # Collection for teams
+    - name: 'teams'
+      label: 'Teams'
+      folder: 'src/content/teams'
+      create: true
+      slug: "{{slug}}"
+      fields:
+        - label: "Team Image"
+          name: "team_image"
+          widget: "image"
+          media_library:
+            config:
+              multiple: false
+        - label: "Team Logo"
+          name: "team_logo"
+          widget: "image"
+          media_library:
+            config:
+              multiple: false
+        - { label: 'Description', name: 'description', widget: 'string' }
+        - label: 'Players'
+          name: 'players'
+          widget: 'list'
+          allow_add: true
+          allow_delete: true
+          collapsed: false
+          fields:
+            - { label: 'Name', name: 'name', widget: 'string' }
+        - label: 'Tags'
+          name: 'tags'
+          widget: 'list'
+          allow_add: true
+          allow_delete: true
+          collapsed: false
+          field: { label: 'Tag', name: 'tag', widget: 'string' }
+        - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
