@@ -31,11 +31,14 @@ public_folder: '/_astro'
 collections:
   - label: "Site Settings"
     name: "site_settings"
-    fields:
-      - label: "Site Logo"
-        name: "logo"
-        widget: "image"
-        # default: "/path/to/default/logo.jpg"  # Optional default image
-        media_library:
-          config:
-            multiple: false
+    files:
+      - label: "General Settings"
+        name: "settings"
+        file: "dummy/settings.yml" # This file doesn't need to exist or be used by your site, it's just for CMS validation
+        fields:
+          - label: "Site Logo"
+            name: "logo"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false  # Only allows one image to be selected
