@@ -11,7 +11,7 @@ collections:
     files:
       - label: "General Settings"
         name: "settings"
-        file: "dummy/settings.yml" # This file doesn't need to exist or be used by your site, it's just for CMS validation
+        file: "decap_data/settings.yml" # This file doesn't need to exist or be used by your site, it's just for CMS validation
         fields:
           - { label: 'Site Name', name: 'site_name', widget: 'string' }
           - label: "Hero Image"
