@@ -3,12 +3,15 @@ backend:
     name: git-gateway
     branch: main
 
-  # Configuration for media files
-  media_folder: 'src/assets/images'
-  public_folder: '/_astro'
+# Configuration for media files
+media_folder: 'src/assets/images'
+public_folder: '/_astro'
 
-  # Definition of collections for content management
-  collections:
+# turn on editing
+publish_mode: editorial_workflow
+
+# Definition of collections for content management
+collections:
     # Collection for site-wide settings
     - label: "Site Settings"
       name: "site_settings"
