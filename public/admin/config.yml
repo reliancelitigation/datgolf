@@ -39,12 +39,69 @@ collections:
             multiple: false
       - { label: 'Name', name: 'name', widget: 'string' }
   - name: 'gallery'
-    label: 'Gallery'
+    label: 'Gallery Images'
     folder: 'src/content/gallery'
     create: true
     fields:
       - label: "Gallery Image"
         name: "gallery_image"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+  - name: 'events'
+    label: 'Events'
+    folder: 'src/content/events'
+    create: true
+    fields:
+      - label: "Event Image"
+        name: "event_image"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Location', name: 'location', widget: 'string' }
+      - label: "Event Start Time"
+        name: "start"
+        widget: "datetime"
+        default: "{{now}}"
+        date_format: "DD.MM.YYYY" # e.g. 24.12.2021
+        time_format: "HH:mm" # e.g. 21:07
+        format: "LLL"
+        picker_utc: false
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+  - name: 'teams'
+    label: 'teams'
+    folder: 'src/content/teams'
+    create: true
+    fields:
+      - label: "Team Image"
+        name: "team_image"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - label: "Team Logo"
+        name: "team_logo"
         widget: "image"
         media_library:
           config:
