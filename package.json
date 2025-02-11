@@ -19,9 +19,7 @@
     "check:prettier": "prettier --check .",
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w .",
-    "prepare": "yarn run co:login",
-    "co:login": "aws codeartifact login --domain-owner 719580023722 --tool npm --domain reliance-crm-main-us-west-2 --repository main"
+    "fix:prettier": "prettier -w ."
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
