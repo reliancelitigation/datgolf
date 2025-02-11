@@ -1,5 +1,5 @@
 import { z, defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
 
 const metadataDefinition = () =>
   z
@@ -46,6 +46,16 @@ const metadataDefinition = () =>
     })
     .optional();
 
+const pagesCollection = defineCollection({
+  /* Retrieve all entries from a JSON file. */
+  loader: glob({ pattern: '**/*.yml*', base: 'src/content/pages' }),
+  schema: z.object({
+    title: z.string(),
+    intro: z.string(),
+    hero_image: z.string().optional(),
+  }),
+});
+
 const postCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/post' }),
   schema: z.object({
@@ -67,4 +77,5 @@ const postCollection = defineCollection({
 
 export const collections = {
   post: postCollection,
+  pages: pagesCollection,
 };
