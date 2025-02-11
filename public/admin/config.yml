@@ -1,7 +1,11 @@
+# allow multiple editing
+publish_mode: editorial_workflow
+
 # Backend configuration for the CMS
 backend:
     name: git-gateway
     branch: main
+    squash_merges: true
 
 # Configuration for media files
 media_folder: 'src/assets/images'
