@@ -9,9 +9,9 @@ import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
 
-import { getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-const siteSettings = await getEntry('pages', 'home');
+// const siteSettings = await getCollection('');
 
 interface Link {
   text?: string;
