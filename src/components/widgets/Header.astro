@@ -13,7 +13,15 @@ import type { CallToAction } from '~/types';
 
 import { getEntry } from 'astro:content';
 
-const siteSettings = await getEntry('siteSettings', 'settings');
+// const siteSettings = await getEntry('siteSettings', 'settings');
+
+import { getImage } from 'astro:assets';
+
+// const optimizedImage = await getImage({
+//   src: '/_astro/datlogo.jpg',
+//   alt: 'Description of the image',
+//   inferSize: true,
+// });
 
 interface Link {
   text?: string;
@@ -76,20 +84,22 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       },
     ]}
   >
-    <!-- <Image
-    class="mx-auto rounded-md w-full"
-    widths={[400, 768, 1024, 2040]}
-    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-    loading="eager"
-    width={1024}
-    height={576}
-    {...image}
-   /> -->
-
+    <!-- image={{
+    src: `~/assets/images/${homePage?.data?.hero_image?.replace('/_astro/', '')}`,
+    alt: 'AstroWind Hero Image',
+  }} -->
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <!-- <a class="flex items-center" href={getHomePermalink()}> -->
-      <Image class="mx-auto rounded-md w-12 h-12" loading="eager" src={`~/assets/images/datlogo.jpg`} alt="Logo" />
-      <!-- </a> -->
+      <a class="flex items-center" href={getHomePermalink()}>
+        <Image
+          class="mx-auto rounded-md w-12 h-12 sm:w-64 sm:h-64"
+          loading="eager"
+          width={100}
+          height={100}
+          src={`~/assets/images/datlogo.jpg`}
+          ,
+          alt="Logo"
+        />
+      </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
       </div>
@@ -145,6 +155,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         }
       </ul>
     </nav>
+    <a class="lg:flex flex-row-reverse hidden" href={getHomePermalink()}>
+      <Image
+        class="rounded-md w-12 h-12 sm:w-64 sm:h-64"
+        loading="eager"
+        width={100}
+        height={100}
+        src={`~/assets/images/datlogo.jpg`}
+        ,
+        alt="Logo"
+      />
+    </a>
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },

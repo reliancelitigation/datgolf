@@ -56,19 +56,19 @@ const pagesCollection = defineCollection({
   }),
 });
 
-const siteSettings = defineCollection({
-  /* Retrieve all entries from a JSON file. */
-  loader: file('src/content/settings.yml'),
-  //   schema: z.object({
-  //     //   title: z.string(),
-  //     //   intro: z.string(),
-  //     //   hero_image: z.string().optional(),
-  //     site_name: z.string(),
-  //     site_logo: z.string(),
-  //     default_seo_description: z.string(),
-  //     default_share_image: z.string(),
-  //   }),
-});
+// const siteSettings = defineCollection({
+//   /* Retrieve all entries from a JSON file. */
+//   loader: file('src/content/settings.yml'),
+//   //   schema: z.object({
+//   //     //   title: z.string(),
+//   //     //   intro: z.string(),
+//   //     //   hero_image: z.string().optional(),
+//   //     site_name: z.string(),
+//   //     site_logo: z.string(),
+//   //     default_seo_description: z.string(),
+//   //     default_share_image: z.string(),
+//   //   }),
+// });
 
 const postCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/post' }),
@@ -92,5 +92,5 @@ const postCollection = defineCollection({
 export const collections = {
   post: postCollection,
   pages: pagesCollection,
-  siteSettings,
+  //   siteSettings,
 };
