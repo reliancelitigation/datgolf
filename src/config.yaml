@@ -1,6 +1,6 @@
 site:
   name: Drive & Thrive
-  site: 'https://datgolf.com'
+  site: 'https://datgolf.netlify.app'
   base: '/'
   trailingSlash: false
 
