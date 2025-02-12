@@ -1,5 +1,4 @@
-# allow multiple editing
-publish_mode: editorial_workflow
+# local_backend: true
 
 # Backend configuration for the CMS
 backend:
@@ -10,9 +9,6 @@ backend:
 # Configuration for media files
 media_folder: 'src/assets/images'
 public_folder: '/_astro'
-
-# turn on editing
-# publish_mode: editorial_workflow
 
 # Definition of collections for content management
 collections:

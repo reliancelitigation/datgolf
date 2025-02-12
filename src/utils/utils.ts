@@ -7,6 +7,16 @@ export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.lang
   timeZone: 'UTC',
 });
 
+export const pick = (collection: any[], key: string) => {
+  let needle = collection.filter((e) => e.id == key)[0].data;
+  if (needle && typeof needle === 'string') {
+    if (/\/_astro\//.test(needle)) {
+      needle = needle.replace('/_astro/', '');
+    }
+  }
+  return needle;
+};
+
 export const getFormattedDate = (date: Date): string => (date ? formatter.format(date) : '');
 
 export const trim = (str = '', ch?: string) => {
