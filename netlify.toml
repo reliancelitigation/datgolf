@@ -3,6 +3,11 @@
   command = "npm run build"
 [build.processing.html]
   pretty_urls = false
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/admin"
+  status = 302
+  force = true
 [[headers]]
   for = "/_astro/*"
   [headers.values]
