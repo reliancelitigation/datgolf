@@ -38,15 +38,6 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const hash = window.location.hash;
-        if (hash.includes('#access_token=')) {
-          const newPath = '/admin' + hash;
-          window.location.href = newPath;
-        }
-      });
-    </script>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
