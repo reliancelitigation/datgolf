@@ -42,12 +42,13 @@ const { language, textDirection } = I18N;
       document.addEventListener('DOMContentLoaded', () => {
         const hash = window.location.hash;
         const pathname = window.location.pathname;
-        if (['/admin', '/admin/'].includes(pathname) && !hash) {
+        const hostname = window.location.hostname;
+        if (['/admin', '/admin/'].includes(pathname) && !hash && hostname != 'datgolf.netlify.app') {
           /// need to redirect to the other domain
-          window.location.href = 'https://datgolf.netlify.com/admin';
+          window.location.href = 'https://datgolf.netlify.app/admin/';
         } else if (hash.includes('#access_token=')) {
           const newPath = '/admin' + hash;
-          window.location.href = 'https://datgolf.netlify.com' + newPath;
+          window.location.href = 'https://datgolf.netlify.app' + newPath;
         }
       });
     </script>
