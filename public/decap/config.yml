@@ -1,4 +1,4 @@
-# local_backend: true
+local_backend: true
 
 # Backend configuration for the CMS
 backend:
@@ -135,7 +135,14 @@ collections:
           config:
             multiple: false
       - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
+      - label: 'Sponsor Level'
+        name: 'level'
+        widget: 'select'
+        options: ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Legacy']
+      - { label: 'Description', name: 'description', widget: 'string', hint: 'Description of sponsor' }
+      - { label: 'Website', name: 'website', widget: 'string', hint: 'https://sponsor.com' }
+      - { label: 'Instagram', name: 'instagram', widget: 'string', hint: '@sponsor' }
+      - { label: 'Phone Number', name: 'phone', widget: 'string', hint: '(818) 555-1212' }
 
   # Collection for gallery images
   - label: 'Gallery Images'
@@ -150,8 +157,8 @@ collections:
         media_library:
           config:
             multiple: false
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
       - label: 'Tags'
         name: 'tags'
         widget: 'list'
@@ -165,7 +172,7 @@ collections:
     label: 'Events'
     folder: 'src/content/events'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{fields.eventDate | date('YYYY-MM-DD')}}-{{fields.title | slugify}}"
     fields:
       - label: 'Event Image'
         name: 'event_image'
@@ -184,7 +191,6 @@ collections:
         time_format: 'HH:mm' # e.g., 21:07
         format: 'LLL'
         picker_utc: false
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
 
   # Collection for teams
   - name: 'teams'
@@ -193,6 +199,7 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
+      - { label: 'Team Name', name: 'title', widget: 'string', hint: 'The Swingers' }
       - label: 'Team Image'
         name: 'team_image'
         widget: 'image'
@@ -221,4 +228,3 @@ collections:
         allow_delete: true
         collapsed: false
         field: { label: 'Tag', name: 'tag', widget: 'string' }
-      - { label: 'SEO Description', name: 'seo_description', widget: 'string', hint: 'Description for SEO' }
